@@ -11,7 +11,7 @@
 16384||-9223372036854775808|T|G
 16384||10|T|G
 16384||16385|T|G</Grants>
-      <IntrospectionStateNumber>746</IntrospectionStateNumber>
+      <IntrospectionStateNumber>929</IntrospectionStateNumber>
       <ServerVersion>14.5</ServerVersion>
       <StartupTime>1668010469</StartupTime>
       <TimeZones>true ACDT
@@ -808,7 +808,7 @@ false Zulu
 13670||10|C|G
 13670||-9223372036854775808|U|G
 13670||10|U|G</Grants>
-      <IntrospectionStateNumber>747</IntrospectionStateNumber>
+      <IntrospectionStateNumber>930</IntrospectionStateNumber>
       <ObjectId>16384</ObjectId>
       <OwnerName>fedorkon</OwnerName>
     </database>
@@ -4238,43 +4238,448 @@ false Zulu
     <schema id="263" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>747</IntrospectionStateNumber>
+      <IntrospectionStateNumber>930</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>526</StateNumber>
       <OwnerName>fedorkon</OwnerName>
     </schema>
-    <table id="264" parent="263" name="User">
-      <ObjectId>16387</ObjectId>
-      <StateNumber>740</StateNumber>
+    <table id="264" parent="263" name="employees">
+      <ObjectId>16399</ObjectId>
+      <StateNumber>823</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>fedorkon</OwnerName>
     </table>
-    <column id="265" parent="264" name="user_id">
+    <table id="265" parent="263" name="office">
+      <ObjectId>16393</ObjectId>
+      <StateNumber>803</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>fedorkon</OwnerName>
+    </table>
+    <table id="266" parent="263" name="profession">
+      <ObjectId>16456</ObjectId>
+      <StateNumber>926</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>fedorkon</OwnerName>
+    </table>
+    <table id="267" parent="263" name="subscribe_type">
+      <ObjectId>16426</ObjectId>
+      <StateNumber>866</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>fedorkon</OwnerName>
+    </table>
+    <table id="268" parent="263" name="subscribes">
+      <ObjectId>16437</ObjectId>
+      <StateNumber>901</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>fedorkon</OwnerName>
+    </table>
+    <table id="269" parent="263" name="transaction">
+      <ObjectId>16415</ObjectId>
+      <StateNumber>865</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>fedorkon</OwnerName>
+    </table>
+    <table id="270" parent="263" name="users">
+      <ObjectId>16387</ObjectId>
+      <StateNumber>890</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>fedorkon</OwnerName>
+    </table>
+    <column id="271" parent="264" name="emp_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>775</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="272" parent="264" name="emp_name">
+      <DataType>varchar(18)|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>781</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="273" parent="264" name="emp_middle_name">
+      <DataType>varchar(18)|0s</DataType>
+      <Position>4</Position>
+      <StateNumber>782</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="274" parent="264" name="emp_last_name">
+      <DataType>varchar(30)|0s</DataType>
+      <Position>5</Position>
+      <StateNumber>783</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="275" parent="264" name="salary">
+      <DataType>bigint|0s</DataType>
+      <Position>6</Position>
+      <StateNumber>784</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="276" parent="264" name="phone">
+      <DataType>varchar(11)|0s</DataType>
+      <Position>8</Position>
+      <StateNumber>786</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="277" parent="264" name="birth_day">
+      <DataType>varchar(12)|0s</DataType>
+      <Position>10</Position>
+      <StateNumber>823</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="278" parent="264" name="employees_emp_id_uindex">
+      <ClassIds>1978</ClassIds>
+      <ColNames>emp_id</ColNames>
+      <CollationIds>0</CollationIds>
+      <ObjectId>16404</ObjectId>
+      <StateNumber>823</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="279" parent="264" name="employees_pk">
+      <ClassIds>1978</ClassIds>
+      <ColNames>emp_id</ColNames>
+      <CollationIds>0</CollationIds>
+      <ObjectId>16402</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>823</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="280" parent="264" name="employees_pk">
+      <ColNames>emp_id</ColNames>
+      <ObjectId>16403</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>775</StateNumber>
+      <UnderlyingIndexId>16402</UnderlyingIndexId>
+    </key>
+    <column id="281" parent="265" name="office_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>762</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="282" parent="265" name="office_name">
+      <DataType>varchar(30)|0s</DataType>
+      <Position>2</Position>
+      <StateNumber>762</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="283" parent="265" name="office_phone">
+      <DataType>varchar(11)|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>762</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="284" parent="265" name="office_location">
+      <DataType>varchar(120)|0s</DataType>
+      <Position>4</Position>
+      <StateNumber>767</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="285" parent="265" name="office_revenue">
+      <DataType>bigint|0s</DataType>
+      <Position>5</Position>
+      <StateNumber>771</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="286" parent="265" name="office_office_id_uindex">
+      <ClassIds>1978</ClassIds>
+      <ColNames>office_id</ColNames>
+      <CollationIds>0</CollationIds>
+      <ObjectId>16398</ObjectId>
+      <StateNumber>763</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="287" parent="265" name="office_pk">
+      <ClassIds>1978</ClassIds>
+      <ColNames>office_id</ColNames>
+      <CollationIds>0</CollationIds>
+      <ObjectId>16396</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>762</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="288" parent="265" name="office_pk">
+      <ColNames>office_id</ColNames>
+      <ObjectId>16397</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>762</StateNumber>
+      <UnderlyingIndexId>16396</UnderlyingIndexId>
+    </key>
+    <column id="289" parent="266" name="prof_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>926</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="290" parent="266" name="desc">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>2</Position>
+      <StateNumber>926</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="291" parent="266" name="needed">
+      <DataType>integer|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>926</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="292" parent="266" name="number_of_employees">
+      <DataType>integer|0s</DataType>
+      <Position>4</Position>
+      <StateNumber>926</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="293" parent="266" name="profession_pk">
+      <ClassIds>1978</ClassIds>
+      <ColNames>prof_id</ColNames>
+      <CollationIds>0</CollationIds>
+      <ObjectId>16459</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>926</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="294" parent="266" name="profession_prof_id_uindex">
+      <ClassIds>1978</ClassIds>
+      <ColNames>prof_id</ColNames>
+      <CollationIds>0</CollationIds>
+      <ObjectId>16461</ObjectId>
+      <StateNumber>927</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="295" parent="266" name="profession_pk">
+      <ColNames>prof_id</ColNames>
+      <ObjectId>16460</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>926</StateNumber>
+      <UnderlyingIndexId>16459</UnderlyingIndexId>
+    </key>
+    <column id="296" parent="267" name="type_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>860</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="297" parent="267" name="price">
+      <DataType>integer|0s</DataType>
+      <Position>2</Position>
+      <StateNumber>860</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="298" parent="267" name="desc">
+      <DataType>varchar(180)|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>860</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="299" parent="267" name="subscribe_type_pk">
+      <ClassIds>1978</ClassIds>
+      <ColNames>type_id</ColNames>
+      <CollationIds>0</CollationIds>
+      <ObjectId>16429</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>860</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="300" parent="267" name="subscribe_type_type_id_uindex">
+      <ClassIds>1978</ClassIds>
+      <ColNames>type_id</ColNames>
+      <CollationIds>0</CollationIds>
+      <ObjectId>16431</ObjectId>
+      <StateNumber>861</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="301" parent="267" name="subscribe_type_pk">
+      <ColNames>type_id</ColNames>
+      <ObjectId>16430</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>860</StateNumber>
+      <UnderlyingIndexId>16429</UnderlyingIndexId>
+    </key>
+    <column id="302" parent="268" name="user_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>897</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="303" parent="268" name="sub_type_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>890</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="304" parent="268" name="status">
+      <DataType>varchar(18)|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>901</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <foreign-key id="305" parent="268" name="subscribes_users__fk">
+      <ColNames>user_id</ColNames>
+      <ObjectId>16447</ObjectId>
+      <RefColNames>user_id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <RefKeyName>user_pk</RefKeyName>
+      <StateNumber>890</StateNumber>
+      <RefTableId>16387</RefTableId>
+      <RefTableName>users</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="306" parent="268" name="subscribes__fk">
+      <ColNames>sub_type_id</ColNames>
+      <ObjectId>16442</ObjectId>
+      <RefColNames>type_id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <RefKeyName>subscribe_type_pk</RefKeyName>
+      <StateNumber>890</StateNumber>
+      <RefTableId>16426</RefTableId>
+      <RefTableName>subscribe_type</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="307" parent="268" name="subscribes_pk">
+      <ClassIds>1978</ClassIds>
+      <ColNames>user_id</ColNames>
+      <CollationIds>0</CollationIds>
+      <ObjectId>16454</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>897</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="308" parent="268" name="subscribes_user_id_uindex">
+      <ClassIds>1978</ClassIds>
+      <ColNames>user_id</ColNames>
+      <CollationIds>0</CollationIds>
+      <ObjectId>16453</ObjectId>
+      <StateNumber>892</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="309" parent="268" name="subscribes_pk">
+      <ColNames>user_id</ColNames>
+      <ObjectId>16455</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>897</StateNumber>
+      <UnderlyingIndexId>16454</UnderlyingIndexId>
+    </key>
+    <column id="310" parent="269" name="trans_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>846</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="311" parent="269" name="trans_sum">
+      <DataType>integer|0s</DataType>
+      <Position>2</Position>
+      <StateNumber>846</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="312" parent="269" name="status">
+      <DataType>varchar(18)|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>851</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="313" parent="269" name="office_id">
+      <DataType>integer|0s</DataType>
+      <Position>4</Position>
+      <StateNumber>852</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="314" parent="269" name="sub_id">
+      <DataType>integer|0s</DataType>
+      <Position>5</Position>
+      <StateNumber>865</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="315" parent="269" name="transaction_office__fk">
+      <ColNames>office_id</ColNames>
+      <ObjectId>16421</ObjectId>
+      <RefColNames>office_id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <RefKeyName>office_pk</RefKeyName>
+      <StateNumber>856</StateNumber>
+      <RefTableId>16393</RefTableId>
+      <RefTableName>office</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="316" parent="269" name="transaction_fk">
+      <ColNames>sub_id</ColNames>
+      <ObjectId>16432</ObjectId>
+      <RefColNames>type_id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <RefKeyName>subscribe_type_pk</RefKeyName>
+      <StateNumber>866</StateNumber>
+      <RefTableId>16426</RefTableId>
+      <RefTableName>subscribe_type</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="317" parent="269" name="transaction_pk">
+      <ClassIds>1978</ClassIds>
+      <ColNames>trans_id</ColNames>
+      <CollationIds>0</CollationIds>
+      <ObjectId>16418</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>846</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="318" parent="269" name="transaction_trans_id_uindex">
+      <ClassIds>1978</ClassIds>
+      <ColNames>trans_id</ColNames>
+      <CollationIds>0</CollationIds>
+      <ObjectId>16420</ObjectId>
+      <StateNumber>847</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="319" parent="269" name="transaction_pk">
+      <ColNames>trans_id</ColNames>
+      <ObjectId>16419</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>846</StateNumber>
+      <UnderlyingIndexId>16418</UnderlyingIndexId>
+    </key>
+    <column id="320" parent="270" name="user_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>740</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="266" parent="264" name="user_name">
+    <column id="321" parent="270" name="user_name">
       <DataType>varchar(18)|0s</DataType>
       <Position>2</Position>
       <StateNumber>740</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="267" parent="264" name="user_middle_name">
+    <column id="322" parent="270" name="user_middle_name">
       <DataType>varchar(18)|0s</DataType>
       <Position>3</Position>
       <StateNumber>740</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="268" parent="264" name="user_last_name">
+    <column id="323" parent="270" name="user_last_name">
       <DataType>varchar(30)|0s</DataType>
       <Position>4</Position>
       <StateNumber>740</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="269" parent="264" name="user_pk">
+    <index id="324" parent="270" name="user_pk">
       <ClassIds>1978</ClassIds>
       <ColNames>user_id</ColNames>
       <CollationIds>0</CollationIds>
@@ -4284,7 +4689,7 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="270" parent="264" name="user_user_id_uindex">
+    <index id="325" parent="270" name="user_user_id_uindex">
       <ClassIds>1978</ClassIds>
       <ColNames>user_id</ColNames>
       <CollationIds>0</CollationIds>
@@ -4293,7 +4698,7 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="271" parent="264" name="user_pk">
+    <key id="326" parent="270" name="user_pk">
       <ColNames>user_id</ColNames>
       <ObjectId>16391</ObjectId>
       <Primary>1</Primary>
